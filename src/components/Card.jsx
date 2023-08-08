@@ -1,18 +1,17 @@
-import logo from "../assets/image1.png";
-import star from "../assets/star.png";
+import star from "../../images/star.png"
 
-function Card() {
+function Card(props) {
     return(
         <div className="card">
-            <img src={logo} alt="Rank 1" className="card--img1"/>
-            <div className="card--rate">
+            <img src={`../images/${props.img}`} alt="Rank 1" className="card--image" />
+            <div className="card--stats">
                 <img src={star} alt="star" className="card--star"/>
-                <span>5.0</span>
-                <span className="grey">(6) • </span>
-                <span className="grey"> USA</span>
+                <span>{props.rating}</span>
+                <span className="gray">({props.review}) • </span>
+                <span className="gray">{props.location}</span>
             </div>
-            <p>Life lessons with kate jeffrenes</p>
-            <p><span className="bold">From $136</span> / person</p>
+            <p className="card--title">{props.title}</p>
+            <p className="card--price"><span className="bold">From ${props.price}</span> / person</p>
         </div>
     )
 }
